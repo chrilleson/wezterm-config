@@ -1,3 +1,7 @@
+local wezterm = require('wezterm')
+local config_dir = wezterm.config_dir or (os.getenv('HOME') .. '/.config/wezterm')
+package.path = package.path .. ';' .. config_dir .. '/?.lua;' .. config_dir .. '/?/init.lua'
+
 local Config = require('config')
 
 require('utils.backdrops')
@@ -12,7 +16,8 @@ require('events.tab-title').setup({ hide_active_tab_unseen = false, unseen_icon 
 require('events.new-tab-button').setup()
 require('events.gui-startup').setup()
 
-return Config:init()
+return Config
+   :init()
    :append(require('config.appearance'))
    :append(require('config.bindings'))
    :append(require('config.domains'))
