@@ -8,6 +8,10 @@ return {
    default_cwd = 'c:/dev',
 
    scrollback_lines = 20000,
+   
+   enable_scroll_bar = false,
+   alternate_buffer_wheel_scroll_speed = 1,
+   enable_kitty_keyboard = false,
 
    hyperlink_rules = {
       -- Matches: a URL in parens: (URL)
