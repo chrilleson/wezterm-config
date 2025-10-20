@@ -1,24 +1,12 @@
-<h2 align="center">My WezTerm Config</h2>
-
-<p align="center">
-  <a href="https://github.com/KevinSilvester/wezterm-config/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/KevinSilvester/wezterm-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41">
-  </a>
-  <a href="https://github.com/KevinSilvester/wezterm-config/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/KevinSilvester/wezterm-config?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41">
-  </a>
-  <a href="https://github.com/KevinSilvester/wezterm-config/actions/workflows/lint.yml">
-    <img alt="Build" src="https://img.shields.io/github/actions/workflow/status/KevinSilvester/wezterm-config/lint.yml?&style=for-the-badge&logo=githubactions&label=CI&color=A6E3A1&logoColor=D9E0EE&labelColor=302D41">
-  </a>
-</p>
+# My WezTerm Config
 
 ![screenshot](./.github/screenshots/wezterm.gif)
 
 ---
 
-### Features
+## Features
 
-- [**Background Image Selector**](https://github.com/KevinSilvester/wezterm-config/blob/master/utils/backdrops.lua)
+- [**Background Image Selector**](./utils/backdrops.lua)
 
   - Cycle images
   - Fuzzy search for image
@@ -26,27 +14,27 @@
 
   > See: [key bindings](#background-images) for usage
 
-- [**GPU Adapter Selector**](https://github.com/KevinSilvester/wezterm-config/blob/master/utils/gpu_adapter.lua)
+- [**GPU Adapter Selector**](./utils/gpu-adapter.lua)
 
-  > :bulb: Only works if the [`front_end`](https://github.com/KevinSilvester/wezterm-config/blob/master/config/appearance.lua#L8) option is set to `WebGpu`.
+  > :bulb: Only works if the [`front_end`](./config/appearance.lua#L8) option is set to `WebGpu`.
 
   A small utility to select the best GPU + Adapter (graphics API) combo for your machine.
 
   GPU + Adapter combo is selected based on the following criteria:
 
-  1.  <details>
+  1. <details>
       <summary>Best GPU available</summary>
 
       `Discrete` > `Integrated` > `Other` (for `wgpu`'s OpenGl implementation on Discrete GPU) > `Cpu`
       </details>
 
-  2.  <details>
+  2. <details>
       <summary>Best graphics API available (based off my very scientific scroll a big log file in Neovim test 😁)</summary>
 
-      > :bulb:<br>
-      > The available graphics API choices change based on your OS.<br>
-      > These options correspond to the APIs the `wgpu` crate (which powers WezTerm's gui in `WebGpu` mode)<br>
-      > currently has support implemented for.<br>
+      > :bulb:  
+      > The available graphics API choices change based on your OS.  
+      > These options correspond to the APIs the `wgpu` crate (which powers WezTerm's gui in `WebGpu` mode)  
+      > currently has support implemented for.  
       > See: <https://github.com/gfx-rs/wgpu#supported-platforms> for more info
 
       - Windows: `Dx12` > `Vulkan` > `OpenGl`
@@ -57,14 +45,14 @@
 
 ---
 
-### Getting Started
+## Getting Started
 
-- ##### Requirements:
+### Requirements
 
   - <details>
-      <summary><b>WezTerm</b></summary>
+      <summary>WezTerm</summary>
 
-    Minimum Version: `20240127-113634-bbcac864`<br>
+    Minimum Version: `20240127-113634-bbcac864`  
     Recommended Version: [`Nightly`](https://github.com/wez/wezterm/releases/nightly)
 
     [Official Installation Page](https://wezfurlong.org/wezterm/installation.html)
@@ -119,8 +107,8 @@
         ```
       </details>
 
-    > :bulb:<br>
-    > Toast notifications don't work in non-portable installations.<br>
+    > :bulb:  
+    > Toast notifications don't work in non-portable installations.  
     > See issue <https://github.com/wez/wezterm/issues/5166> for more details
   
     ---
@@ -145,7 +133,7 @@
       </details>
 
     - <details>
-      <summary>Install Nighlty</summary>
+      <summary>Install Nightly</summary>
 
       - Install with Homebrew
 
@@ -164,7 +152,7 @@
 
     **Linux**
 
-    Refer to the Linux installation page.<br>
+    Refer to the Linux installation page.  
     <https://wezfurlong.org/wezterm/install/linux.html>
 
     </details>
@@ -190,30 +178,28 @@
     >
     > - <https://www.nerdfonts.com/#home>
     > - <https://github.com/ryanoasis/nerd-fonts?#font-installation>
-    </details/>
 
-&nbsp;
+    </details>
 
-- ##### Steps:
+### Steps
 
-  1.  ```sh
-      # On Windows and Unix systems
-      git clone https://github.com/KevinSilvester/wezterm-config.git ~/.config/wezterm
-      ```
-  2.  And Done!!! 🎉🎉
+1. ```sh
+   # On Windows and Unix systems
+   git clone https://github.com/KevinSilvester/wezterm-config.git ~/.config/wezterm
+   ```
 
-&nbsp;
+2. And Done!!! 🎉🎉
 
-- ##### Things You Might Want to Change:
+### Things You Might Want to Change
 
-  - [./config/domains.lua](./config/domains.lua) for custom SSH/WSL domains
-  - [./config/launch.lua](./config/launch.lua) for preferred shells and its paths
+- [./config/domains.lua](./config/domains.lua) for custom SSH/WSL domains
+- [./config/launch.lua](./config/launch.lua) for preferred shells and its paths
 
 ---
 
-### All Key Bindings
+## All Key Bindings
 
-Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</kbd>(super reversed) keys.<br>
+Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</kbd>(super reversed) keys.
 
 - On MacOs:
   - <kbd>SUPER</kbd> ⇨ <kbd>Super</kbd>
@@ -222,7 +208,7 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
   - <kbd>SUPER</kbd> ⇨ <kbd>Alt</kbd>
   - <kbd>SUPER_REV</kbd> ⇨ <kbd>Alt</kbd>+<kbd>Ctrl</kbd>
 
-> To avoid confusion when switching between different OS and to avoid conflicting<br>
+> To avoid confusion when switching between different OS and to avoid conflicting  
 > with OS's built-in keyboard shortcuts.
 
 - On all platforms: <kbd>LEADER</kbd> ⇨ <kbd>SUPER_REV</kbd>+<kbd>Space</kbd>
@@ -241,16 +227,12 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER</kbd>+<kbd>f</kbd>     | Search Text                                 |
 | <kbd>SUPER_REV</kbd>+<kbd>u</kbd> | Open URL                                    |
 
-&nbsp;
-
 #### Copy+Paste
 
 | Keys                                          | Action               |
 | --------------------------------------------- | -------------------- |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>c</kbd> | Copy to Clipboard    |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>v</kbd> | Paste from Clipboard |
-
-&nbsp;
 
 #### Cursor Movements
 
@@ -259,8 +241,6 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER</kbd>+<kbd>LeftArrow</kbd>  | Move cursor to Line Start                                  |
 | <kbd>SUPER</kbd>+<kbd>RightArrow</kbd> | Move cursor to Line End                                    |
 | <kbd>SUPER</kbd>+<kbd>Backspace</kbd>  | Clear Line <sub>(does not work in PowerShell or cmd)</sub> |
-
-&nbsp;
 
 #### Tabs
 
@@ -294,8 +274,6 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER</kbd>+<kbd>0</kbd>     | Rename Current Tab |
 | <kbd>SUPER_REV</kbd>+<kbd>0</kbd> | Undo Rename        |
 
-&nbsp;
-
 #### Windows
 
 | Keys                          | Action               |
@@ -303,8 +281,6 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER</kbd>+<kbd>n</kbd> | `SpawnWindow`        |
 | <kbd>SUPER</kbd>+<kbd>=</kbd> | Increase Window Size |
 | <kbd>SUPER</kbd>+<kbd>-</kbd> | Decrease Window Size |
-
-&nbsp;
 
 #### Panes
 
@@ -341,8 +317,6 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>PageUp</kbd>             | Scroll Page up                       |
 | <kbd>PageDown</kbd>           | Scroll Page down                     |
 
-&nbsp;
-
 #### Background Images
 
 | Keys                              | Action                       |
@@ -352,8 +326,6 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER</kbd>+<kbd>.</kbd>     | Cycle to previous Image      |
 | <kbd>SUPER_REV</kbd>+<kbd>/</kbd> | Fuzzy select Image           |
 | <kbd>SUPER</kbd>+<kbd>b</kbd>     | Toggle background focus mode |
-
-&nbsp;
 
 #### Key Tables
 
@@ -389,6 +361,7 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 ### References/Inspirations
 
+- <https://github.com/KevinSilvester/wezterm-config>
 - <https://github.com/rxi/lume>
 - <https://github.com/catppuccin/wezterm>
 - <https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614>
