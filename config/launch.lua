@@ -9,6 +9,7 @@ if platform.is_win then
    options.default_prog = { 'nu' }
    options.launch_menu = {
       { label = 'Nushell', args = { 'nu' } },
+      { label = 'Neovim', args = { 'nvim' } },
       { label = 'PowerShell Core', args = { 'pwsh', '-NoLogo' } },
       { label = 'PowerShell Desktop', args = { 'powershell' } },
       { label = 'Command Prompt', args = { 'cmd' } },
