@@ -5,10 +5,9 @@ return {
    exit_behavior_messaging = 'Verbose',
    status_update_interval = 1000,
    audible_bell = 'Disabled',
-   default_cwd = 'c:/dev',
 
    scrollback_lines = 20000,
-   
+
    enable_scroll_bar = false,
    alternate_buffer_wheel_scroll_speed = 1,
    enable_kitty_keyboard = false,
